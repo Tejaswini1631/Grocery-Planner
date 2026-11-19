@@ -1,0 +1,30 @@
+# Meal & Grocery Planner: local development stack
+# Start with: docker compose up -d
+# Stop with:  docker compose down
+#
+# Stage 1 (now): database only.
+# backend and algorithms services are added as their branches merge.
+
+services:
+  db:
+    image: postgres:16
+    container_name: planner-db
+    environment:
+      POSTGRES_USER: planner
+      POSTGRES_PASSWORD: planner_dev_only
+      POSTGRES_DB: planner
+    ports:
+      - "5432:5432"
+    volumes:
+      # Schema and seed files from database/ run automatically on first start.
+      # Files run in alphabetical order, so prefix them, e.g. 01_schema.sql, 02_seed.sql.
+      - ./database:/docker-entrypoint-initdb.d:ro
+      - planner-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U planner -d planner"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  planner-db-data:
