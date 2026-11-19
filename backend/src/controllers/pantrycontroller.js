@@ -1,4 +1,4 @@
-// Add pantry item
+
 const addPantryItem = (req, res) => {
     const {
         household_id,
@@ -26,7 +26,7 @@ const addPantryItem = (req, res) => {
     });
 };
 
-// Get pantry items
+
 const getPantryItems = (req, res) => {
     const { household_id } = req.query;
 
@@ -36,7 +36,7 @@ const getPantryItems = (req, res) => {
         items: []
     });
 };
-// Update pantry item
+
 const updatePantryItem = (req, res) => {
     const { id } = req.params;
     const { quantity, unit, expiry_date } = req.body;
@@ -52,7 +52,7 @@ const updatePantryItem = (req, res) => {
     });
 };
 
-// Delete pantry item
+
 const deletePantryItem = (req, res) => {
     const { id } = req.params;
 

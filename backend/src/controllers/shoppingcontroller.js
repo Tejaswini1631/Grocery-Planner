@@ -1,4 +1,4 @@
-// Add shopping item
+
 const addShoppingItem = (req, res) => {
     const { household_id, item_name, quantity, unit } = req.body;
 
@@ -19,7 +19,6 @@ const addShoppingItem = (req, res) => {
     });
 };
 
-// Get shopping list
 const getShoppingList = (req, res) => {
     const { household_id } = req.query;
 
@@ -30,7 +29,7 @@ const getShoppingList = (req, res) => {
     });
 };
 
-// Update shopping item
+
 const updateShoppingItem = (req, res) => {
     const { id } = req.params;
     const { item_name, quantity, unit } = req.body;
@@ -46,7 +45,7 @@ const updateShoppingItem = (req, res) => {
     });
 };
 
-// Delete shopping item
+
 const deleteShoppingItem = (req, res) => {
     const { id } = req.params;
 

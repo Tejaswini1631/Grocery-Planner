@@ -1,4 +1,4 @@
-// Get user preferences
+
 const getPreferences = (req, res) => {
     const { userId } = req.params;
 
@@ -12,7 +12,7 @@ const getPreferences = (req, res) => {
     });
 };
 
-// Update user preferences
+
 const updatePreferences = (req, res) => {
     const { userId } = req.params;
     const { diet_type, servings } = req.body;

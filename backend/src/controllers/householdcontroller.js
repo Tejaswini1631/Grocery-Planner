@@ -1,4 +1,4 @@
-// Create a household
+
 const createHousehold = (req, res) => {
     const { household_name, address } = req.body;
 
@@ -17,7 +17,7 @@ const createHousehold = (req, res) => {
     });
 };
 
-// Get household details
+
 const getHousehold = (req, res) => {
     const { id } = req.params;
 
