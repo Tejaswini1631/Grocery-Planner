@@ -4,7 +4,7 @@ import pytest
 import requests
 
 # Backend address and a test household. Override with environment variables if needed.
-BASE_URL = os.environ.get("PLANNER_API_URL", "http://localhost:3000")#change the port name to the one used in the backend
+BASE_URL = os.environ.get("PLANNER_API_URL", "http://localhost:5000")#change the port name to the one used in the backend
 HOUSEHOLD_ID = os.environ.get("PLANNER_TEST_HOUSEHOLD", "1")#change the household id to the one used in the backend
 
 
